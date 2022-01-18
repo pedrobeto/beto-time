@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Shippori+Antique&display=swap');
+
+        * {
+            font-family: 'Shippori Antique', sans-serif;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #808080;
+        }
+
+        .content {
+            border-radius: 12px;
+            width: 40vw;
+            background-color: lightgray;
+            height: 60vh;
+            margin: 12px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .content>img {
+            border-radius: 50%;
+            width: 220px;
+            height: 220px;
+        }
+
+        .wrapper {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .wrapper > img {
+            width: 120px;
+            border-radius: 120px;
+        }
+
+        input[type=text] {
+            width: 80%;
+            border: none;
+            height: 40px;
+            border-radius: 12px;
+            padding: 4px 14px;
+        }
+
+        #title {
+            font-size: 32px;
+            text-align: center;
+            font-family: 'Shippori Antique', sans-serif;
+        }
+
+        .btn {
+            width: 40vw;
+            cursor: pointer;
+            border-radius: 6px;
+            font-size: 24px;
+            border: none;
+            padding: 12px 12px;
+            background-color: #FFDF00;
+            font-weight: bolder;
+            color: #333;
+        }
+
+        #result {
+            background-color: green;
+            color: #fefefe;
+            height: 40px;
+            width: 60vw;
+            align-items: center;
+            justify-content: center;
+            margin: 12px 0;
+            border-radius: 12px;
+            display: none;
+        }
+
+        .btn-again {
+            border: none;
+            width: 40vw;
+            height: 80px;
+            border-radius: 12px;
+            font-weight: bolder;
+            cursor: pointer;
+            display: none;
+
+        }
+
+        @media (max-width: 600px) {
+            .wrapper {
+            }
+            .content {
+                height: 30vh;
+            }
+            .content > img {
+                width: 120px;
+                height: 120px;
+            }
+            .btn {
+                width: 80vw;
+            }
+            #result {
+                font-size: 14px;
+                width: 84vw;
+            }
+        }
+    </style>
+    <script>
+        const reset = () => {
+            let inputFinn = document.getElementById('input-finn').value = '';
+            let inputJake = document.getElementById('input-jake').value = '';
+
+            let result = document.getElementById('result');
+            let resetBtn = document.getElementsByClassName('btn-again')[0];
+
+            resetBtn.style.display = 'none';
+            result.style.display = 'none';
+        }
+
+        const amIRight = () => {
+            // alert(`Voce clicou!`)
+            const rightJake = 'JAKE';
+            const rightFinn = 'FINN';
+
+            let inputFinn = document.getElementById('input-finn').value.toUpperCase();
+            let inputJake = document.getElementById('input-jake').value.toUpperCase();
+            console.log('inputFinn: ', inputFinn.toUpperCase())
+            console.log('inputJake: ', inputJake.toUpperCase())
+
+            let result = document.getElementById('result');
+            let resetBtn = document.getElementsByClassName('btn-again')[0];
+
+            if (inputFinn && inputJake) {
+                console.log('comparing --------------')
+                console.log(`finn: `, inputFinn);
+                console.log(`finn-RIGHT: `, rightFinn);
+                console.log('jake-RIGHT: ', rightJake);
+                console.log('jake: ', inputJake);
+
+                if (
+                    inputFinn === rightFinn && inputJake === rightJake
+                ) {
+                    // botao aparece
+                    resetBtn.style.display = 'block';
+                    // mostra o resultado
+                    result.style.display = `flex`;
+                    result.style.backgroundColor = 'green';
+                    result.innerText = 'VOCE ACERTOU! 🎉🥳'
+                } else {
+                    console.log('errou')
+                    result.innerText = 'VOCE ERROU SEU IMBECIL! 👿';
+                    result.style.backgroundColor = 'red';
+                    result.style.display = 'flex';
+                    resetBtn.style.display = 'block';
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <img src="https://toppng.com/uploads/preview/enguin-transparent-adventure-time-gunter-hora-de-aventura-11562948672fedtt3kpjr.png" alt="">
+        <p id="title">Bem vindo ao portal da Hora de Aventura</p>
+        <div style="display: flex;">
+            <div class="content">
+                <img src="https://cdnb.artstation.com/p/assets/images/images/021/644/693/small/delina-christianty-finn-adventure-time.jpg?1572441518"
+                    alt="">
+                <input id="input-finn" placeholder="Digite o nome" style="margin-top: 12px;" type="text" name="" id="">
+            </div>
+
+            <div class="content">
+                <img src="https://cdn.dribbble.com/users/1808107/screenshots/4112246/media/36aa7735df68aa0cea7b385598ce003e.gif"
+                    alt="">
+                <input id="input-jake" placeholder="Digite o nome" style="margin-top: 12px;" type="text" name="" id="">
+            </div>
+        </div>
+        <button onclick="amIRight()" class="btn">EU ACERTEI?</button>
+        <div id="result">
+            VOCE ACERTOU! 🎉🥳
+        </div>
+        <button class="btn-again" onclick="reset()" style="margin: 2px 0px; background-color: #fefefe">
+            <img src="https://img.icons8.com/ios-filled/50/000000/recurring-appointment.png"/>    
+        </button>
+        <p style="margin: 10px 12px 0px 12px; ">Made by Pedroca e Deco.</p>
+    </div>
+</body>
+
+</html>
