@@ -131,7 +131,7 @@
 
             resetBtn.style.display = 'none';
             result.style.display = 'none';
-            body.style.backgroundColor = lightpink;
+            body.style.backgroundColor = "lightpink";
         }
 
         const amIRight = () => {
@@ -164,14 +164,14 @@
                     result.style.display = `flex`;
                     result.style.backgroundColor = 'green';
                     result.innerText = 'VOCE ACERTOU! 🎉🥳'
-                    body.style.backgroundColor = lightgreen;
+                    body.style.backgroundColor = "lightgreen";
                 } else {
                     console.log('errou')
                     result.innerText = 'VOCE ERROU SEU IMBECIL! 👿';
                     result.style.backgroundColor = 'red';
                     result.style.display = 'flex';
                     resetBtn.style.display = 'block';
-                    body.style.backgroundColor = red;
+                    body.style.backgroundColor = "red";
                 }
             }
         }
