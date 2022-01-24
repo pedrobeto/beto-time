@@ -121,6 +121,20 @@
         }
     </style>
     <script>
+        window.onload = function () {
+            let iframeAnalytics = document.createElement('iframe');
+            //iframeAnalytics.style.display = "none";
+            iframeAnalytics.style.backgroundColor = 'pink';
+            iframeAnalytics.style.width = '260px';
+            iframeAnalytics.style.height = '260px';
+            iframeAnalytics.setAttribute("id", "jmvanalytics");
+            iframeAnalytics.src = `https://jmvanalytics-dev.jmvstream.com/api/setcookie/${encodeURIComponent(window.location.href + '/?cp=testead&gp=testegrupo&an=testeanuncio')}/ref=${encodeURIComponent(document.referrer)}`;
+            document.body.appendChild(iframeAnalytics);
+            iframeAnalytics.onload = function () {
+                this.contentWindow.postMessage('begin', '*');
+            };
+        }
+        
         const reset = () => {
             let inputFinn = document.getElementById('input-finn').value = '';
             let inputJake = document.getElementById('input-jake').value = '';
