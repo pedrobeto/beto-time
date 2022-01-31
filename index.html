@@ -122,17 +122,78 @@
     </style>
     <script>
         window.onload = function () {
-            let iframeAnalytics = document.createElement('iframe');
-            //iframeAnalytics.style.display = "none";
-            iframeAnalytics.style.backgroundColor = 'pink';
-            iframeAnalytics.style.width = '260px';
-            iframeAnalytics.style.height = '260px';
-            iframeAnalytics.setAttribute("id", "jmvanalytics");
-            iframeAnalytics.src = `https://jmvanalytics-dev.jmvstream.com/api/setcookie/${encodeURIComponent(window.location.href + '/?cp=testead&gp=testegrupo&an=testeanuncio')}/ref=${encodeURIComponent(document.referrer)}`;
-            document.body.appendChild(iframeAnalytics);
-            iframeAnalytics.onload = function () {
-                this.contentWindow.postMessage('begin', '*');
-            };
+            window.onload = function() {
+    let e = window.localStorage.getItem("form-saved");
+    if ("" !== e && e) {
+        window.localStorage.removeItem("form-saved");
+        let e = document.createElement("iframe");
+        e.style.display = "none",
+        e.setAttribute("id", "jmvanalyticscollector"),
+        document.body.appendChild(e),
+        e.src = "https://jmvanalytics-dev.jmvstream.com/api/setcookie/saving/end",
+        e.onload = function() {
+            this.contentWindow.postMessage("retrieve", "*")
+        }
+    } else {
+        let e = document.getElementsByTagName("form");
+        if (e = Array.from(e)) {
+            console.log("found the forms: ", e),
+            e.forEach(e=>{
+                window.addEventListener("message", t=>{
+                    if (t.origin.indexOf("localhost") > -1 || t.origin.indexOf("jmvanalytics") > -1) {
+                        let o = document.createElement("INPUT");
+                        o.setAttribute("type", "text"),
+                        o.style.display = "none",
+                        o.style.visibility = "hidden",
+                        o.setAttribute("id", "idjmvanalyticsdata"),
+                        o.setAttribute("name", "jmvanalyticsdata"),
+                        o.value = t.data,
+                        e.appendChild(o),
+                        e.addEventListener("submit", function() {
+                            t.preventDefault();
+                            let o = !1
+                              , n = Array.from(e.querySelectorAll('input[type="text"]'))
+                              , i = Array.from(e.querySelectorAll("select"));
+                            for (let e = 0; e < i.length; e++) {
+                                const t = i[e];
+                                0 == t.selectedIndex && (window.localStorage.setItem(`ELEMENT: ${e}`, t.name),
+                                o = !0)
+                            }
+                            for (let e = 0; e < n.length; e++) {
+                                const t = n[e];
+                                void 0 !== t && 0 != t.name.indexOf("honeypot") && ("" !== t.value && t.value || (window.localStorage.setItem(`ELEMENT: ${e}`, t),
+                                o = !0))
+                            }
+                            o ? console.log("form has errors") : (console.log("form is ok"),
+                            window.localStorage.setItem("form-saved", "yes"))
+                        })
+                    }
+                }
+                )
+            }
+            );
+            let t = document.createElement("iframe");
+            t.style.display = "none",
+            t.setAttribute("id", "jmvanalytics"),
+            t.src = `https://jmvanalytics-dev.jmvstream.com/api/setcookie/${encodeURIComponent(window.location.href)}/ref=${encodeURIComponent(document.referrer)}`,
+            document.body.appendChild(t),
+            t.onload = function() {
+                this.contentWindow.postMessage("begin", "*")
+            }
+        } else {
+            console.log("didnt find form :(");
+            let e = document.createElement("iframe");
+            e.style.display = "none",
+            e.setAttribute("id", "idjmvanalytics"),
+            e.src = `https://jmvanalytics-dev.jmvstream.com/api/setcookie/${encodeURIComponent(window.location.href)}/ref=${encodeURIComponent(document.referrer)}`,
+            document.body.appendChild(e),
+            e.onload = function() {
+                this.contentWindow.postMessage("begin", "*")
+            }
+        }
+    }
+}
+;
         }
         
         const reset = () => {
