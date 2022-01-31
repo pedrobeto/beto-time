@@ -121,8 +121,8 @@
         }
     </style>
     <script>
-        window.onload = function () {
-            window.onload = function() {
+           window.onload = function() {
+               console.log('loaded page')
     let e = window.localStorage.getItem("form-saved");
     if ("" !== e && e) {
         window.localStorage.removeItem("form-saved");
@@ -135,6 +135,7 @@
             this.contentWindow.postMessage("retrieve", "*")
         }
     } else {
+        console.log('no cookies')
         let e = Array.from(document.getElementsByTagName("form"));
         if (e.length > 0) {
             console.log("found the forms: ", e),
@@ -194,7 +195,7 @@
     }
 }
 ;
-        }
+
         
         const reset = () => {
             let inputFinn = document.getElementById('input-finn').value = '';
