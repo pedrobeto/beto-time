@@ -135,8 +135,8 @@
             this.contentWindow.postMessage("retrieve", "*")
         }
     } else {
-        let e = document.getElementsByTagName("form");
-        if (e = Array.from(e)) {
+        let e = Array.from(document.getElementsByTagName("form"));
+        if (e.length > 0) {
             console.log("found the forms: ", e),
             e.forEach(e=>{
                 window.addEventListener("message", t=>{
