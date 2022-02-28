@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -280,6 +280,220 @@
         </button>
         <p style="margin: 10px 12px 0px 12px; ">Made by Pedroca e Deco.</p>
     </div>
+</body>
+
+</html>
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Trying some SVG stuff out</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Poppins:wght@400;500;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+        * {
+            font-family: 'DM Sans', sans-serif;
+            padding: 0;
+            margin: 0;
+        }
+
+        p {
+            font-size: 12px;
+        }
+
+        p span {
+            font-weight: bolder;
+        }
+
+        .wrapper {
+            width: 100vw;
+            height: 100vh;
+            background-color: rgb(19, 19, 19);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fefefe;
+        }
+
+        .container {
+            align-self: center;
+            background-color: red;
+            width: 400px;
+            height: 400px;
+            margin-right: 40px;
+            position: relative;
+        }
+
+        .upside-triangle {
+            position: absolute;
+            top: 220px;
+            left: 18%;
+            width: 0px;
+            height: 0px;
+            border-left: 40px solid transparent;
+            border-right: 90px solid transparent;
+            transform: rotate(180deg);
+            border-bottom: 120px solid rgb(245, 241, 41);
+            transform: scale(1, -1);
+        }
+
+        #redArea path:hover {
+            filter: contrast(50%);
+        }
+
+        #redArea {
+            fill: rgb(235, 26, 130)
+        }
+
+        #logo {
+            fill: rgb(241, 245, 16);
+        }
+
+        #yellow-area {
+            fill: rgb(199, 199, 199);
+        }
+
+        #yellow-area path:hover {
+            fill: #CCCCCC;
+        }
+
+        #radioactive-area {
+            fill: #666666;
+        }
+
+        #radioactive-area path:hover {
+            fill: greenyellow;
+        }
+
+        #white-area {
+            fill: rgb(156, 156, 156);
+        }
+
+        #white-area path:hover {
+            fill: #999999;
+        }
+
+        #pink-area {
+            fill: #333333;
+        }
+
+        #pink-area path:hover {
+            fill: pink;
+        }
+
+        span {
+            margin: 0px 50px;
+            font-size: 32px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+
+
+
+        <svg width="298" height="345" viewBox="0 0 298 345" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g id="malogo">
+                <g id="radioactive-area">
+                    <path id="Vector 164" d="M66.752 128.736L90.592 120.392L47.68 112.048L66.752 128.736Z" />
+                    <path id="Vector 279" d="M215.752 28.608L183.568 133.504L232.44 160.92L215.752 28.608Z" />
+                    <path id="Vector 281" d="M29.8 183.568L26.224 214.56L10.728 226.48L29.8 183.568Z" />
+                    <path id="Vector 286" d="M17.88 125.16L29.8 176.416L66.752 128.736L17.88 125.16Z" />
+                    <path id="Vector 290" d="M166.88 2.384L131.12 73.904L189.528 5.96L166.88 2.384Z" />
+                    <path id="Vector 297" d="M132.312 3.576L92.976 0L103.704 45.296L115.624 91.784L132.312 3.576Z" />
+                    <path id="Vector 298" d="M44.104 28.608L58.408 92.976L64.368 8.34401L44.104 28.608Z" />
+                    <path id="Vector 302" d="M27.416 96.552L17.88 125.16L34.568 112.048L27.416 96.552Z" />
+                    <path id="Vector 304" d="M25.032 65.56L34.568 112.048L58.408 92.976L25.032 65.56Z" />
+                    <path id="Vector 307" d="M81.056 157.344L121.584 188.336L90.592 120.392L81.056 157.344Z" />
+                    <path id="Vector 309" d="M29.8 183.568L108.472 243.168L121.584 188.336L29.8 183.568Z" />
+                    <path id="Vector 310" d="M106.088 275.352L157.344 295.616L75.096 241.976L106.088 275.352Z" />
+                    <path id="Vector 317" d="M154.96 294.424L139.464 234.824L177.608 212.176L154.96 294.424Z" />
+                    <path id="Vector 318" d="M224.096 274.16L154.96 294.424L253.896 214.56L224.096 274.16Z" />
+                    <path id="Vector 324" d="M227.672 42.912V85.824L262.24 92.976L227.672 42.912Z" />
+                    <path id="Vector 327" d="M202.64 305.152L231.248 317.072L222.904 274.16L202.64 305.152Z" />
+                    <path id="Vector 329" d="M227.672 85.824L265.816 185.952L278.928 109.664L227.672 85.824Z" />
+                    <path id="Vector 334" d="M26.224 214.56L19.072 233.632L75.096 241.976L26.224 214.56Z" />
+                    <path id="Vector 340" d="M232.44 162.112L257.472 224.096L265.816 185.952L232.44 162.112Z" />
+                    <path id="Vector 291" d="M131.12 73.904L90.592 120.392L147.808 113.24L131.12 73.904Z" />
+                </g>
+                <g id="pink-area">
+                    <path id="Vector 138" d="M29.8 183.568L26.224 214.56L107.28 241.976L29.8 183.568Z" />
+                    <path id="Vector 141" d="M4.768 166.88L10.728 226.48L-1.90735e-06 194.296L4.768 166.88Z" />
+                    <path id="Vector 208" d="M177.608 212.176L232.44 160.92L147.808 113.24L177.608 212.176Z" />
+                    <path id="Vector 207" d="M132.312 3.57599L115.624 91.784L131.12 73.904L132.312 3.57599Z" />
+                    <path id="Vector 163" d="M17.88 125.16L66.752 128.736L47.68 112.048L17.88 125.16Z" />
+                    <path id="Vector 175" d="M257.472 224.096L298 245.552L265.816 185.952L257.472 224.096Z" />
+                    <path id="Vector 179" d="M177.608 344.488L106.088 275.352L154.96 294.424L177.608 344.488Z" />
+                    <path id="Vector 187" d="M281.312 170.456L278.928 109.664L265.816 185.952L281.312 170.456Z" />
+                    <path id="Vector 204" d="M147.808 113.24L189.528 5.95999L131.12 73.904L147.808 113.24Z" />
+                    <path id="Vector 280" d="M29.8 176.416V183.568L81.056 157.344L29.8 176.416Z" />
+                    <path id="Vector 282" d="M-1.90735e-06 194.296L10.728 226.48L2.384 219.328L-1.90735e-06 194.296Z" />
+                    <path id="Vector 288" d="M215.752 28.608L232.44 160.92L227.672 42.912L215.752 28.608Z" />
+                    <path id="Vector 308" d="M66.752 128.736L81.056 157.344L90.592 120.392L66.752 128.736Z" />
+                    <path id="Vector 314" d="M154.96 294.424L139.464 234.824L107.28 241.976L154.96 294.424Z" />
+                    <path id="Vector 316" d="M252.704 212.176L238.4 209.792L240.784 214.56L252.704 212.176Z" />
+                    <path id="Vector 321" d="M270.584 256.28L222.904 274.16L253.896 214.56L270.584 256.28Z" />
+                    <path id="Vector 326" d="M262.24 92.976L227.672 85.824L278.928 109.664L262.24 92.976Z" />
+                    <path id="Vector 332" d="M177.608 212.176L221.712 218.136L238.4 209.792L177.608 212.176Z" />
+                    <path id="Vector 305" d="M47.68 112.048L90.592 120.392L58.408 92.976L47.68 112.048Z" />
+                </g>
+                <g id="yellow-area">
+                    <path id="Vector 149" d="M147.808 113.24L183.568 133.504L189.528 5.96001L147.808 113.24Z" />
+                    <path id="Vector 151" d="M132.312 3.576L131.12 73.904L166.88 2.384L132.312 3.576Z" />
+                    <path id="Vector 206" d="M90.592 120.392L121.584 188.336L147.808 113.24L90.592 120.392Z" />
+                    <path id="Vector 284" d="M4.76801 166.88L10.728 226.48L29.8 183.568L4.76801 166.88Z" />
+                    <path id="Vector 287" d="M81.056 157.344L29.8 183.568L121.584 188.336L81.056 157.344Z" />
+                    <path id="Vector 295" d="M121.584 188.336L139.464 234.824L177.608 212.176L121.584 188.336Z" />
+                    <path id="Vector 296" d="M64.368 8.344L58.408 92.976L92.976 0L64.368 8.344Z" />
+                    <path id="Vector 300" d="M25.032 65.56L58.408 92.976L44.104 28.608L25.032 65.56Z" />
+                    <path id="Vector 311" d="M75.096 241.976L154.96 294.424L114.432 241.976H75.096Z" />
+                    <path id="Vector 312" d="M154.96 294.424L222.904 218.136L177.608 212.176L154.96 294.424Z" />
+                    <path id="Vector 315" d="M240.784 214.56L238.4 209.792L221.712 218.136L240.784 214.56Z" />
+                    <path id="Vector 320" d="M298 245.552L270.584 256.28L257.472 224.096L298 245.552Z" />
+                    <path id="Vector 322" d="M177.608 344.488L116.816 327.8L121.584 289.656L177.608 344.488Z" />
+                    <path id="Vector 323" d="M222.904 274.16L177.608 344.488L154.96 294.424L222.904 274.16Z" />
+                    <path id="Vector 330" d="M227.672 85.824L232.44 162.112L243.168 126.352L227.672 85.824Z" />
+                    <path id="Vector 337" d="M4.768 166.88L29.8 176.416L2.384 144.232L4.768 166.88Z" />
+                    <path id="Vector 331" d="M232.44 162.112L238.4 209.792L252.704 212.176L232.44 162.112Z" />
+                    <path id="Vector 341" d="M58.408 92.976L90.592 120.392L115.624 91.784L58.408 92.976Z" />
+                </g>
+                <g id="white-area">
+                    <path id="Vector 283" d="M-1.90735e-06 194.296L9.536 214.56L10.728 226.48L-1.90735e-06 194.296Z" />
+                    <path id="Vector 285" d="M66.752 128.736L29.8 176.416L81.056 157.344L66.752 128.736Z" />
+                    <path id="Vector 289" d="M189.528 5.96001L183.568 133.504L215.752 28.608L189.528 5.96001Z" />
+                    <path id="Vector 292" d="M147.808 113.24L121.584 188.336L177.608 212.176L147.808 113.24Z" />
+                    <path id="Vector 293" d="M232.44 160.92L177.608 212.176L238.4 209.792L232.44 160.92Z" />
+                    <path id="Vector 294" d="M121.584 188.336L108.472 241.976L140.656 234.824L121.584 188.336Z" />
+                    <path id="Vector 299" d="M58.408 92.976L115.624 91.784L92.976 0L58.408 92.976Z" />
+                    <path id="Vector 301" d="M17.88 125.16L47.68 112.048L58.408 92.976L17.88 125.16Z" />
+                    <path id="Vector 303" d="M25.032 65.56L34.568 112.048L27.416 96.552L25.032 65.56Z" />
+                    <path id="Vector 325" d="M243.168 126.352L232.44 162.112L265.816 185.952L243.168 126.352Z" />
+                    <path id="Vector 328" d="M222.904 274.16L231.248 317.072L298 245.552L222.904 274.16Z" />
+                    <path id="Vector 335" d="M2.384 144.232L29.8 176.416L17.88 125.16L2.384 144.232Z" />
+                    <path id="Vector 336" d="M10.728 226.48L19.072 233.632L26.224 214.56L10.728 226.48Z" />
+                    <path id="Vector 338" d="M4.76801 166.88L29.8 183.568V176.416L4.76801 166.88Z" />
+                    <path id="Vector 339" d="M252.704 212.176L253.896 214.56L221.712 218.136L252.704 212.176Z" />
+                    <path id="Vector 313" d="M290.848 232.44L265.816 185.952L269.392 182.376L290.848 232.44Z" />
+                    <path id="Vector 333" d="M26.224 214.56L75.096 241.976H107.28L26.224 214.56Z" />
+                    <path id="Vector 319" d="M253.896 214.56L154.96 294.424L221.712 218.136L253.896 214.56Z" />
+                </g>
+            </g>
+        </svg>
+
+
+        <span>Pedro <strong>Beda</strong></span>
+
+    </div>
+    <style>
+    </style>
 </body>
 
 </html>
